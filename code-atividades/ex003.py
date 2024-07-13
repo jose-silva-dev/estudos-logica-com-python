@@ -1,19 +1,39 @@
-#Crie um programa que calcule o antecessor e sucessor de um número [ OK ]
-#Crie um programa que calcule o dobro, triplo e raiz quadrada de um número [ OK ]
-#Crie um programa que calcule a média aritmética entre dois números
 import math
 
-num1 = int(input("Digite um número:"))
-num2 = int(input("Digite o segundo número número:"))
+def obter_numero(prompt):
+    return float(input(prompt))
 
-antecessor = num1 -1
-sucessor = num1 +1
+def calcular_antecessor(numero):
+    return numero - 1
 
-dobro = num1 + num1
-triplo = num1 * 3
-raiz_quadrada = math.sqrt(num1) #num** 0.5
-media = (num1 + num2)/2
+def calcular_sucessor(numero):
+    return numero + 1
 
-print(f'O antecessor do número 1 informado é {antecessor} e sucessor o número é {sucessor}. O dobro é {dobro}, o triplo é {triplo} e a sua raiz quadrada é {raiz_quadrada} :')
+def calcular_dobro(numero):
+    return numero * 2
 
-print(f'A média dos números, {media}')
+def calcular_triplo(numero):
+    return numero * 3
+
+def calcular_raiz_quadrada(numero):
+    return math.sqrt(numero)
+
+def calcular_media(n1, n2):
+    return (n1 + n2) / 2
+
+# Entrada de dados
+num1 = obter_numero("Digite o primeiro número:")
+num2 = obter_numero("Digite o segundo número:")
+
+# Cálculos
+antecessor = calcular_antecessor(num1)
+sucessor = calcular_sucessor(num1)
+dobro = calcular_dobro(num1)
+triplo = calcular_triplo(num1)
+raiz_quadrada = calcular_raiz_quadrada(num1)
+media = calcular_media(num1, num2)
+
+# Exibição dos resultados
+print(f'O antecessor do número {num1} informado é {antecessor} e o sucessor é {sucessor}.')
+print(f'O dobro é {dobro}, o triplo é {triplo} e a sua raiz quadrada é {raiz_quadrada:.2f}.')
+print(f'A média dos números {num1} e {num2} é {media:.2f}.')
